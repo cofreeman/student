@@ -20,7 +20,20 @@ public class AccountServiceImpl implements AccountService{
     }
 
     @Override
-    public Optional<Account> getAccount(Long id) {
-        return accountRepository.findById(id);
+    public Account getAccount(Long id) {
+        return accountRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public Account createAccount(Account account) {
+        if (accountRepository.findById(account.getId()).isPresent()){
+            throw new IllegalStateException("already exists " + account.getId());
+        }
+        return accountRepository.save(account);
+    }
+
+    @Override
+    public void deleteAccount(Long id) {
+        accountRepository.deleteById(id);
     }
 }

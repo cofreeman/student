@@ -6,5 +6,7 @@ import java.util.Optional;
 public interface AccountService {
 
     List<Account> getAccounts();
-    Optional<Account> getAccount(Long id);
+    Account getAccount(Long id);
+    Account createAccount(Account account);
+    void deleteAccount(Long id);
 }

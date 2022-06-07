@@ -21,6 +21,6 @@ class AccountServiceImplTest {
 
         List<Account> accounts = accountService.getAccounts();
 
-        assertThat(accounts).hasSize(2);
+        assertThat(accounts).hasSize(1);
     }
 }

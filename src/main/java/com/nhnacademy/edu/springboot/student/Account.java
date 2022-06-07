@@ -19,5 +19,4 @@ public class Account {
     private String number;
 
     private Integer balance;
-
 }
